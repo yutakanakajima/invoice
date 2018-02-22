@@ -19,6 +19,9 @@ public class OrderTbl implements Serializable {
 	@Column(name="order_no")
 	private int orderNo;
 
+	@Column(name="client_no")
+	private int clientNo;
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="create_datetime")
 	private Date createDatetime;
@@ -54,6 +57,14 @@ public class OrderTbl implements Serializable {
 
 	public void setOrderNo(int orderNo) {
 		this.orderNo = orderNo;
+	}
+
+	public int getClientNo() {
+		return this.clientNo;
+	}
+
+	public void setClientNo(int clientNo) {
+		this.clientNo = clientNo;
 	}
 
 	public Date getCreateDatetime() {

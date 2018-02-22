@@ -19,6 +19,9 @@ public class InvoiceTbl implements Serializable {
 	@Column(name="invoice_no")
 	private int invoiceNo;
 
+	@Column(name="client_no")
+	private int clientNo;
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="create_datetime")
 	private Date createDatetime;
@@ -72,6 +75,14 @@ public class InvoiceTbl implements Serializable {
 
 	public void setInvoiceNo(int invoiceNo) {
 		this.invoiceNo = invoiceNo;
+	}
+
+	public int getClientNo() {
+		return this.clientNo;
+	}
+
+	public void setClientNo(int clientNo) {
+		this.clientNo = clientNo;
 	}
 
 	public Date getCreateDatetime() {
