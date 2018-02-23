@@ -5,7 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <form method="POST" th:action="@{/invoice}">
+    <p th:text="${message}"></p>
+    <form modelAttibute="InvoiceEntryForm" method="POST" th:action="@{/invoice}">
         <label for="InvoiceTitle">InvoiceTitle: </label><input type="text" name="InvoiceTitle" /><br />
         <label for="InvoiceStartDate">InvoiceStartDate: </label><input type="text" name="InvoiceStartDate" /><br />
         <label for="InvoiceEndDate">InvoiceEndDate: </label><input type="text" name="InvoiceEndDate" /><br />

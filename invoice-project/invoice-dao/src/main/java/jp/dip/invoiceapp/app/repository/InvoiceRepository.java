@@ -9,5 +9,6 @@ import jp.dip.invoiceapp.app.entity.InvoiceTbl;
 public interface InvoiceRepository extends JpaRepository<InvoiceTbl, Integer> {
 
     List<InvoiceTbl> findAll();
+    InvoiceTbl findByInvoiceNo(int invoiceNo);
 
 }
