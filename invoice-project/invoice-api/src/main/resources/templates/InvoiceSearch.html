@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Invoice検索</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p th:text="${message}"></p>
+    <form method="GET" th:action="@{/invoice}">
+        <div th:if="${InvoiceSearchData != null}" th:object="${InvoiceSearchData}">
+            <ul>
+                <li th:each="e : ${#fields.detailedErrors()}" th:text="${e}"></li>
+            </ul>
+        </div>
+        <label for="InvoiceNo">InvoiceNo: </label><input type="text" name="InvoiceNo" />
+        <input type="submit" value="検索" />
+    </form>
+    <h1>検索結果</h1>
+    <table border="1">
+      <thead>
+        <tr>
+            <th>請求書管理番号</th>
+            <th>顧客管理番号</th>
+            <th>請求状態</th>
+            <th>請求書作成日</th>
+            <th>請求書件名</th>
+            <th>請求金額</th>
+            <th>消費税</th>
+            <th>請求期間開始日</th>
+            <th>請求期間終了日</th>
+            <th>備考</th>
+            <th>登録ユーザID</th>
+            <th>登録日時</th>
+            <th>更新ユーザID</th>
+            <th>更新日時</th>
+            <th>削除フラグ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="result : ${resultList}">
+            <td th:text="${result.invoiceNo}"></td>
+            <td th:text="${result.clientNo}"></td>
+            <td th:text="${result.invoiceStatus}"></td>
+            <td th:text="${result.invoiceCreateDate}"></td>
+            <td th:text="${result.invoiceTitle}"></td>
+            <td th:text="${result.invoiceAmt}"></td>
+            <td th:text="${result.taxAmt}"></td>
+            <td th:text="${result.invoiceStartDate}"></td>
+            <td th:text="${result.invoiceEndDate}"></td>
+            <td th:text="${result.invoiceNote}"></td>
+            <td th:text="${result.createUser}"></td>
+            <td th:text="${result.createDatetime}"></td>
+            <td th:text="${result.updateUser}"></td>
+            <td th:text="${result.updateDatetime}"></td>
+            <td th:text="${result.delFlg}"></td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="/">戻る</a>
+</body>
+</html>
